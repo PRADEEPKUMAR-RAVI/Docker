@@ -1,0 +1,29 @@
+services:
+  frontend:
+    build:
+      context: ./Book_Store_front_end
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+      
+
+  backend:
+    build:
+      context: ./Book_Store_back_end
+    ports:
+      - "9000:8000"
+    depends_on:
+      - mongo
+    environment:
+      - DB_URL=mongodb://mongo:27017/store
+
+  mongo:
+    image: mongo
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
