@@ -115,9 +115,9 @@ Compose lets you define multi-container apps in a single docker-compose.yml file
 
 # 📄 Sample: Without Compose (Manual)
 
-docker run -d --name db -e MYSQL_ROOT_PASSWORD=pass mysql
-docker run -d --name backend --link db my-backend
-docker run -d --name frontend -p 3000:3000 my-frontend
+docker run -d --name db -e MYSQL_ROOT_PASSWORD=pass mysql 
+docker run -d --name backend --link db my-backend 
+docker run -d --name frontend -p 3000:3000 my-frontend 
 
 # ✅ With Compose (Simple & Declarative)
 
@@ -152,7 +152,7 @@ services:
   
 ### 🛠️ Common Docker Compose Commands
 Command	Purpose
-docker-compose up	Start all services
+docker-compose up	Start all services 
 docker-compose up -d	Start in background
 docker-compose down	Stop and remove containers
 docker-compose build	Build images
