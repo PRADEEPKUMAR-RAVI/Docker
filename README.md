@@ -113,13 +113,13 @@ Log aggregation
 
 Compose lets you define multi-container apps in a single docker-compose.yml file.
 
-# 📄 Sample: Without Compose (Manual)
+#### 📄 Sample: Without Compose (Manual)
 
-docker run -d --name db -e MYSQL_ROOT_PASSWORD=pass mysql 
-docker run -d --name backend --link db my-backend 
-docker run -d --name frontend -p 3000:3000 my-frontend 
+- docker run -d --name db -e MYSQL_ROOT_PASSWORD=pass mysql 
+- docker run -d --name backend --link db my-backend 
+- docker run -d --name frontend -p 3000:3000 my-frontend 
 
-# ✅ With Compose (Simple & Declarative)
+#### ✅ With Compose (Simple & Declarative)
 
 docker-compose up
 
@@ -152,30 +152,30 @@ services:
   
 ### 🛠️ Common Docker Compose Commands
 Command	Purpose
-docker-compose up	Start all services 
-docker-compose up -d	Start in background
-docker-compose down	Stop and remove containers
-docker-compose build	Build images
-docker-compose ps	List running containers
-docker-compose logs	Show service logs
-docker-compose exec <svc>	Run command inside container
+- docker-compose up	Start all services 
+- docker-compose up -d	Start in background
+- docker-compose down	Stop and remove containers
+- docker-compose build	Build images
+- docker-compose ps	List running containers
+- docker-compose logs	Show service logs
+- docker-compose exec <svc>	Run command inside container
 
 ### 🔍 Common Docker CLI Commands
 Command	Description
-docker pull <image>:<tag>	Download image from registry
-docker images	List all local images
-docker run <image>	Run container from image
-docker run -d -p 80:80 <image>	Detached mode + port mapping
-docker ps	List running containers
-docker ps -a	List all containers
-docker stop <container_id>	Stop a running container
-docker start <container_id>	Start a stopped container
-docker rm <container_id>	Remove container
-docker rmi <image>	Remove image
-docker logs <container_id>	Show logs from container
-docker exec -it <container_id> bash	Interactive shell inside container
-docker build -t <image_name> .	Build image from Dockerfile
-docker tag <image> <repo>:<tag>	Tag image for pushing
-docker push <repo>:<tag>	Push image to registry
-docker network ls	List Docker networks
-docker volume ls	List Docker volumes
+- docker pull <image>:<tag>	Download image from registry
+- docker images	List all local images
+- docker run <image>	Run container from image
+- docker run -d -p 80:80 <image>	Detached mode + port mapping
+- docker ps	List running containers
+- docker ps -a	List all containers
+- docker stop <container_id>	Stop a running container
+- docker start <container_id>	Start a stopped container
+- docker rm <container_id>	Remove container
+- docker rmi <image>	Remove image
+- docker logs <container_id>	Show logs from container
+- docker exec -it <container_id> bash	Interactive shell inside container
+- docker build -t <image_name> .	Build image from Dockerfile
+- docker tag <image> <repo>:<tag>	Tag image for pushing
+- docker push <repo>:<tag>	Push image to registry
+- docker network ls	List Docker networks
+- docker volume ls	List Docker volumes
