@@ -78,7 +78,8 @@ Registries are where Docker stores and retrieves container images.
   COPY . .
   RUN npm install
   CMD ["npm", "start"]
-📦 Container
+  
+### 📦 Container
 Created from an image
 
 Isolated by default
@@ -91,12 +92,13 @@ bash
 Copy
 Edit
 docker run -d -p 3000:3000 my-app
-💾 Volume
+
+### 💾 Volume
 Keeps data alive even after container is removed
 
 Created during container run, not at image build time
 
-🔌 Plugin
+### 🔌 Plugin
 Used for extended functionality like:
 
 External volumes (e.g., EBS, NFS)
@@ -105,25 +107,26 @@ Network routing
 
 Log aggregation
 
-🧩 Docker Compose
+---
+
+### 🧩 Docker Compose
+
 Compose lets you define multi-container apps in a single docker-compose.yml file.
 
-📄 Sample: Without Compose (Manual)
-bash
-Copy
-Edit
+# 📄 Sample: Without Compose (Manual)
+
 docker run -d --name db -e MYSQL_ROOT_PASSWORD=pass mysql
 docker run -d --name backend --link db my-backend
 docker run -d --name frontend -p 3000:3000 my-frontend
-✅ With Compose (Simple & Declarative)
-bash
-Copy
-Edit
+
+# ✅ With Compose (Simple & Declarative)
+
 docker-compose up
-🏗️ Compose Structure
-yaml
-Copy
-Edit
+
+---
+
+### 🏗️ Compose Structure
+
 version: "3.9"
 
 services:
@@ -143,7 +146,11 @@ services:
       - "3000:80"
     depends_on:
       - backend
-🛠️ Common Docker Compose Commands
+
+---
+
+  
+### 🛠️ Common Docker Compose Commands
 Command	Purpose
 docker-compose up	Start all services
 docker-compose up -d	Start in background
@@ -153,7 +160,7 @@ docker-compose ps	List running containers
 docker-compose logs	Show service logs
 docker-compose exec <svc>	Run command inside container
 
-🔍 Common Docker CLI Commands
+### 🔍 Common Docker CLI Commands
 Command	Description
 docker pull <image>:<tag>	Download image from registry
 docker images	List all local images
